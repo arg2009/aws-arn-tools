@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css" rel="stylesheet" type="text/css"/>
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <title>AWS ARN Tools</title>
+</head>
+<body class="w-screen">
+<div class="w-screen flex justify-center p-4">
+  <div class="w-full md:w-1/2">
+    <!-- ECS Task ARN -->
+    <div class="flex flex-col gap-1">
+      <label class="form-control w-full flex items-center gap-2 text-xs">
+        <div class="label">
+          <span class="label-text">To run a command within an ECS container, enter an ECS Task ARN</span>
+        </div>
+        <input
+          id="ecs-arn-task"
+          type="text"
+          placeholder="E.g. arn:aws:ecs:ap-southeast-2:111111111111:task/my-ecs-cluster/xxxxxxxxxxxxxxxx"
+          class="input input-bordered w-full text-center"
+          autocomplete="ecs-arn"
+        />
+      </label>
+
+
+      <div id="ecs-execute-command" class="flex flex-row justify-center tooltip" data-tip="Click to copy">
+        <code
+          class="text-center p-6 cursor-copy border"
+        >
+        </code>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="hidden toast toast-top toast-end">
+    <div class="alert alert-success">
+      <span id="toast-message"></span>
+    </div>
+  </div>
+</div>
+<script src="assets/js/app.js" type="text/javascript"></script>
+</body>
+</html>
